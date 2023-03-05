@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+struct Mobil{
+    int tahun;
+    string merk;
+    string warna;
+
+    Mobil *next;
+};
+
+int main(){
+    Mobil *mobil1, *mobil2, *mobil3;
+    mobil1 = new Mobil;
+    mobil2 = new Mobil;
+    mobil3 = new Mobil;
+
+    mobil1->tahun = 2010;
+    mobil1->merk = "Toyota";
+    mobil1->warna = "Hitam";
+    mobil1->next = mobil2;
+
+    mobil2->tahun = 2011;
+    mobil2->merk = "Honda";
+    mobil2->warna = "Putih";
+    mobil2->next = mobil3;
+
+    mobil3->tahun = 2012;
+    mobil3->merk = "Suzuki";
+    mobil3->warna = "Merah";
+    mobil3->next = NULL;
+
+    Mobil *petunjuk;
+    petunjuk = mobil1;
+    int i = 1;
+
+    while(petunjuk != NULL){
+        cout << "Node ke- " << i << endl;
+        cout << "Tahun: " << petunjuk->tahun << endl;
+        cout << "Merk: " << petunjuk->merk << endl;
+        cout << "Warna: " << petunjuk->warna << endl;
+        cout << endl;
+        petunjuk = petunjuk->next;
+        i++;
+    }
+}
